@@ -15,10 +15,6 @@ require_relative "passenger_wagon"
 @trains = []
 @routes = []
 @train = nil
-@route = nil
-@station = nil
-@wagon = nil
-
 
 def list_of_trains
   puts "Доступные поезда:"
@@ -113,7 +109,7 @@ case act
       start_station = gets.chomp.to_i
       puts "Выберите конечную станцию"
       end_station = gets.chomp.to_i
-      @routes << Route.new(@stations[start_station-1],@stations[end_station-1])
+      @routes << Route.new(@stations[start_station-1], @stations[end_station-1])
       puts "Маршрут создан!
       \rДобавить промежуточные станции? (введите 'д' или 'н' )"
       user_answer = gets.chomp

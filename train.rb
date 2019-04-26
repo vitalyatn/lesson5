@@ -6,11 +6,7 @@ class Train
   @@trains = {}
 
   def self.find(number)
-    if @@trains.has_key? number
-      @@trains[number]
-    else
-      nil
-    end
+    @@trains[number]
   end
 
   def initialize(number)
@@ -18,8 +14,7 @@ class Train
     @speed = 0
     @wagons = []
     @@trains[@number] = self
-    #register_instance
-   end
+  end
 
   def speed_up
     @speed += 10
